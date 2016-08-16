@@ -76,7 +76,7 @@ def trainModel(X,y):
     for i in range(10):
         print("... Training model for number", i)
         #Get indices from y for each matching number; Initialize others
-        numindex = np.nonzero(y[:,0]==i)
+        numindex = np.nonzero(y[:,0] == i)
         numy     = np.mat(np.zeros(shape=(np.shape(X)[0],1)))
 
         #Create Y = 1, for particular indexes => Only these are positive classified
@@ -85,11 +85,12 @@ def trainModel(X,y):
         #Run OPTIMIZE to calculate best theta for each number
         cols = np.shape(X)[1]
         init_theta  = np.zeros((1,cols)).reshape(-1)
-        init_lambda = 0
+        init_lambda = 0.1
         theta_min = calcMinGrad(init_theta, X, numy, init_lambda)
 
         #Store theta
         theta[:,i] = np.reshape(theta_min.x, (np.shape(theta)[0],1))
+        
     return theta
 
 
