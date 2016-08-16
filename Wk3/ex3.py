@@ -64,7 +64,7 @@ def computeGradient(theta, X, y, lam):
 
 #Function calcMinGrad => Run FMINCG to compute minimizing theta
 def calcMinGrad(init_theta, X, y, lam):
-    theta_min = opt.minimize(computeCost,x0=init_theta,jac=computeGradient,args=(X,y,lam),method='CG',options={'maxiter': 100})
+    theta_min = opt.minimize(computeCost,x0=init_theta,jac=computeGradient,args=(X,y,lam),method='BFGS',options={'maxiter': 100})
     return theta_min
 
 #Implementation to train model for each number
@@ -74,9 +74,14 @@ def trainModel(X,y):
 
     #Training model
     for i in range(10):
-        print("... Training model for number", i)
-        #Get indices from y for each matching number; Initialize others
-        numindex = np.nonzero(y[:,0] == i)
+        if i == 0:
+            #0 is mapped with 10
+            numindex = np.nonzero(y[:,0] == 10)
+        else:
+            #Get indices from y for each matching number; Initialize others
+            numindex = np.nonzero(y[:,0] == i)
+            
+        print("... Training model for number", i)        
         numy     = np.mat(np.zeros(shape=(np.shape(X)[0],1)))
 
         #Create Y = 1, for particular indexes => Only these are positive classified
@@ -90,6 +95,7 @@ def trainModel(X,y):
 
         #Store theta
         theta[:,i] = np.reshape(theta_min.x, (np.shape(theta)[0],1))
+        print(theta_min.message)
         
     return theta
 
