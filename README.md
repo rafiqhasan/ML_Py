@@ -5,10 +5,10 @@ The purpose of this project is to implement Machine learning in python using the
 
 The secondary focus of this project is to try sticking to as much as possible Octave-like and easy implementation of the codes, for everyone to be able to relate to the Coursera ML course by Andrew Ng.
 
-Linear Regression - Prediction
-Logistic Regression - Classification
-Neural learning - Classification & Prediction
-K-means Clustering - Unlabeled classification
+1. Linear Regression - Prediction
+2. Logistic Regression - Classification
+3. Neural learning - Classification & Prediction
+4. K-means Clustering - Unlabeled classification
 
 Important points:
 
