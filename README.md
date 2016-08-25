@@ -1,4 +1,4 @@
-# MLPy
+# ML_Py
 Firstly, my heartiest thanks to Professor Andrew Ng for his open contributions to ML.
 
 The purpose of this project is to implement Machine learning in python using the data and problem statement reference of ML course by Andrew Ng on Coursera.
