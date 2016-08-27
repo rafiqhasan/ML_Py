@@ -7,6 +7,7 @@ The purpose of this project is to implement Machine learning in python using the
 2. Logistic Regression - Classification
 3. Neural learning - Classification & Prediction
 4. K-means Clustering - Unlabeled classification
+5. Anomaly detection
 
 Important points:
 
