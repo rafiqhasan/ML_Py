@@ -1,7 +1,6 @@
-#In this part, you will implement linear regression with multiple variables to
-#predict the prices of houses. Suppose you are selling your house and you
-#want to know what a good market price would be. One way to do this is to
-#collect information on recent houses sold and make a model of housing prices.
+#This part below is the extension to the house price( single variable ) prediction exercise.
+#Here you will apply ML analysis techniques like validation curve/ learning curve to diagnose Bias / Variance problems and
+#also estimate the right model, regularization parameters for your model
 
 #You will have the following objective
 #1. Plot learning curve to measure Bias Vs Variance
