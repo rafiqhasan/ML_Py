@@ -9,3 +9,4 @@ You will have the following objective
 1. Plot learning curve to measure Bias Vs Variance
 2. Model to be used( 1, 2, 3 ... ) 
 3. Regularization parameter estimation
+4. 
