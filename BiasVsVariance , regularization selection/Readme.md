@@ -5,7 +5,7 @@ When we implement a machine learning algorithm we need to monitor a few points:
 
 In this part of the implementation we will be using Validation and Learning curves to monitor the progress and efficiency of our learning model.
 
-#You will have the following objective
-#1. Plot learning curve to measure Bias Vs Variance
-#1. Model to be used( 1, 2, 3 ... ) 
-#2. Regularization parameter estimation
+You will have the following objective
+1. Plot learning curve to measure Bias Vs Variance
+2. Model to be used( 1, 2, 3 ... ) 
+3. Regularization parameter estimation
