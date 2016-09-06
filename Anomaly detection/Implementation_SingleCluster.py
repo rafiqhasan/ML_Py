@@ -91,7 +91,7 @@ def calcFscore(X, Yval, mv, start_eps, divider, times):
             rec = tp/(tp + fn)
 
         #F1 Score
-        F1 = 0
+        F1 = np.float(0)
         if prec + rec > 0:
             F1 = (2*prec*rec)/(prec+rec)  
 
@@ -101,7 +101,8 @@ def calcFscore(X, Yval, mv, start_eps, divider, times):
             besteps = epsilon
             
         #Decrease epsilon
-        print("At epsilon", epsilon, "- F1 Score:", F1)            
+        print("At epsilon", epsilon, "- F1 Score:", F1)
+        print("TP:",tp," - FP:",fp," - FN:",fn)
         plt.scatter(epsilon,F1,marker='x',color='blue')
         epsilon = epsilon / divider
 
@@ -169,15 +170,15 @@ print("Computing Mean & Variance parameters ...")
 MV = calcMeanVar(X)
 
 #Calculate Fscore
-if 1 == 2:
-    starteps = 0.95
-    divider = 1.3
+if 1 == 1:
+    starteps = 0.00261792634794614
+    divider = 1.000000001
     times = 100
     calcFscore(X, y, MV, starteps, divider, times)
 
 #Plot computed decision boundary as per parameters MV
-if ( 1 == 1 ):
-    bestEPS = 0.0022752362697426127 #As estimated from F1 score
+if ( 1 == 2 ):
+    bestEPS = 0.00261792634794614 #As estimated from F1 score
     print("Plotting contour for predicted boundaries")
     #Prepare Contour plot grid
     u = np.arange(0, 25, 0.1)
@@ -189,6 +190,7 @@ if ( 1 == 1 ):
     plt.scatter(X[:,0],X[:,1],marker='x',color='blue',label='Inputs')
     plt.xlabel('Machine vibration')
     plt.ylabel('Voltage surge')
-    cont = plt.contour(u, v, z, levels=[bestEPS],legend="Boundaries")
-    plt.legend(loc='upper right', numpoints=1, ncol=1, fontsize=8)    
+    cont = plt.contour(u, v, z, levels=[bestEPS],legend="Boundaries", colors=['r'])
+    plt.legend(loc='upper right', numpoints=1, ncol=1, fontsize=8)
+    plt.title('Anomaly ML model')
     plt.show()
